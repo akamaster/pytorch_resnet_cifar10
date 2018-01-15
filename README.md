@@ -1,9 +1,9 @@
-# Proper ResNet Implementation for CIFAR10/CIFAR100
+# Proper ResNet Implementation for CIFAR10/CIFAR100 in pytorch
 [Torchvision model zoo](https://github.com/pytorch/vision/tree/master/torchvision/models) provides number of implementations of various state-of-the-art architectures, however, most of them are defined and implemented for ImageNet.
 Usually it is very straightforward to use them on other datasets, but sometimes this models needs manual setup.
 
-Unfortunately, none of the repositories with ResNets on CIFAR10 provides an implementation as described in  [original paper](https://arxiv.org/abs/1512.03385). If you just use torchvision's models on CIFAR10 you'll get the model **that differs in number of layers and parameters**. That is unacceptable if you want to directly compare ResNets on CIFAR10.
-The purpose of this repo is to provide a valid implementation of ResNet-s for CIFAR10. Following models are provided:
+Unfortunately, none of the pytorch repositories with ResNets on CIFAR10 provides an implementation as described in  [original paper](https://arxiv.org/abs/1512.03385). If you just use torchvision's models on CIFAR10 you'll get the model **that differs in number of layers and parameters**. That is unacceptable if you want to directly compare ResNets on CIFAR10.
+The purpose of this repo is to provide a valid pytorch implementation of ResNet-s for CIFAR10. Following models are provided:
 
 | Name      | # layers | # params|
 |-----------|---------:|-------:|
