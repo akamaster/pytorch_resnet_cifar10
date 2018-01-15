@@ -15,3 +15,5 @@ The purpose of this repo is to provide a valid implementation of ResNet-s for CI
 |ResNet1202 |  1202    | 19.4M  |
 
 And their implementation matches description in original paper.
+
+If you find this implementation is useful and used it in your production/academic work please cite/mention this page.
