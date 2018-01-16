@@ -6,13 +6,13 @@ Unfortunately, none of the pytorch repositories with ResNets on CIFAR10 provides
 The purpose of this repo is to provide a valid pytorch implementation of ResNet-s for CIFAR10. Following models are provided:
 
 | Name      | # layers | # params| Test err(paper) | Test err(this impl.)|
-|-----------|---------:|--------:|-----------------|---------------------|
-|ResNet20   |    20    | 0.27M   | 8.75| 8.27|
-|ResNet32   |    32    | 0.46M   | 7.51| 7.37|
-|ResNet44   |    44    | 0.66M   | 7.17| |
-|ResNet56   |    56    | 0.85M   | 6.97| 6.61|
-|ResNet110  |   110    |  1.7M   | 6.43| |
-|ResNet1202 |  1202    | 19.4M   | 7.93| |
+|-----------|---------:|--------:|:-----------------:|:---------------------:|
+|ResNet20   |    20    | 0.27M   | 8.75%| 8.27%|
+|ResNet32   |    32    | 0.46M   | 7.51%| 7.37%|
+|ResNet44   |    44    | 0.66M   | 7.17%| |
+|ResNet56   |    56    | 0.85M   | 6.97%| 6.61%|
+|ResNet110  |   110    |  1.7M   | 6.43%| |
+|ResNet1202 |  1202    | 19.4M   | 7.93%| |
 
 And their implementation matches description in original paper, with comparable or better test error.
 
