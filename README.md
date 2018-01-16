@@ -7,10 +7,10 @@ The purpose of this repo is to provide a valid pytorch implementation of ResNet-
 
 | Name      | # layers | # params| Test err(paper) | Test err(this impl.)|
 |-----------|---------:|--------:|:-----------------:|:---------------------:|
-|ResNet20   |    20    | 0.27M   | 8.75%| 8.27%|
-|ResNet32   |    32    | 0.46M   | 7.51%| 7.37%|
-|ResNet44   |    44    | 0.66M   | 7.17%| |
-|ResNet56   |    56    | 0.85M   | 6.97%| 6.61%|
+|ResNet20   |    20    | 0.27M   | 8.75%| **8.27%**|
+|ResNet32   |    32    | 0.46M   | 7.51%| **7.37%**|
+|ResNet44   |    44    | 0.66M   | 7.17%| **6.90%**|
+|ResNet56   |    56    | 0.85M   | 6.97%| **6.61%**|
 |ResNet110  |   110    |  1.7M   | 6.43%| |
 |ResNet1202 |  1202    | 19.4M   | 7.93%| |
 
@@ -29,8 +29,9 @@ This implementation follows paper in straightforward manner with some caveats. *
 ## Pretrained models for download
 1. [ResNet20, 8.27% err](https://github.com/akamaster/pytorch_resnet_cifar10/raw/master/pretrained_models/resnet20.th)
 2. [ResNet32, 7.37% err](https://github.com/akamaster/pytorch_resnet_cifar10/raw/master/pretrained_models/resnet32.th)
-3. ResNet44
-4. [ResNet56, 6.61% err](https://github.com/akamaster/pytorch_resnet_cifar10/raw/master/pretrained_models/resnet20.th)
-5. ResNet1202
+3. [ResNet44, 6.90% err](https://github.com/akamaster/pytorch_resnet_cifar10/raw/master/pretrained_models/resnet32.th)
+4. [ResNet56, 6.61% err](https://github.com/akamaster/pytorch_resnet_cifar10/raw/master/pretrained_models/resnet56.th)
+5. ResNet110
+6. ResNet1202
 
 If you find this implementation is useful and used it in your production/academic work please cite/mention this page and author Yerlan Idelbayev.
