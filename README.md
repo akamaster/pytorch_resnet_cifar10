@@ -2,8 +2,8 @@
 [Torchvision model zoo](https://github.com/pytorch/vision/tree/master/torchvision/models) provides number of implementations of various state-of-the-art architectures, however, most of them are defined and implemented for ImageNet.
 Usually it is very straightforward to use them on other datasets, but sometimes these models need manual setup.
 
-Unfortunately, none of the pytorch repositories with ResNets on CIFAR10 provides an implementation as described in the [original paper](https://arxiv.org/abs/1512.03385). If you just use the torchvision's models on CIFAR10 you'll get the model **that differs in number of layers and parameters**. This is unacceptable if you want to directly compare ResNet-s on CIFAR10 with original paper.
-The purpose of this repo is to provide a valid pytorch implementation of ResNet-s for CIFAR10 as described in original paper. Following models are provided:
+Unfortunately, none of the pytorch repositories with ResNets on CIFAR10 provides an implementation as described in the [original paper](https://arxiv.org/abs/1512.03385). If you just use the torchvision's models on CIFAR10 you'll get the model **that differs in number of layers and parameters**. This is unacceptable if you want to directly compare ResNet-s on CIFAR10 with the original paper.
+The purpose of this repo is to provide a valid pytorch implementation of ResNet-s for CIFAR10 as described in the original paper. Following models are provided:
 
 | Name      | # layers | # params| Test err(paper) | Test err(this impl.)|
 |-----------|---------:|--------:|:-----------------:|:---------------------:|
@@ -14,7 +14,7 @@ The purpose of this repo is to provide a valid pytorch implementation of ResNet-
 |[ResNet110](https://github.com/akamaster/pytorch_resnet_cifar10/raw/master/pretrained_models/resnet110.th)  |   110    |  1.7M   | 6.43%| **6.32%**|
 |[ResNet1202](https://github.com/akamaster/pytorch_resnet_cifar10/raw/master/pretrained_models/resnet1202.th) |  1202    | 19.4M   | 7.93%| **6.18%**|
 
-The implementation matches description in original paper, with comparable or better test error.
+The implementation matches description of the original paper, with comparable or better test error.
 
 ## How to run?
 ```bash
@@ -24,7 +24,7 @@ chmod +x run.sh && ./run.sh
 ```
 
 ## Details of training
-This implementation follows paper in straightforward manner with some caveats: **First**, original paper uses 45k/5k train/validation split on train data, and selects the best performing model based on the performance on the validation set. This implementation does not do any validation testing, so if you need to compare your results on ResNet head-to-head to orginal paper keep this in mind. **Second**, if you want to train ResNet1202 keep in mind that you need 16GB memory on GPU.
+This implementation follows the paper in straightforward manner with some caveats: **First**, training in the paper uses 45k/5k train/validation split on the train data, and selects the best performing model based on the performance on the validation set. This implementation does not do any validation testing, so if you need to compare your results on ResNet head-to-head to the orginal paper keep this in mind. **Second**, if you want to train ResNet1202 keep in mind that you need 16GB memory on GPU.
 
 ## Pretrained models for download
 1. [ResNet20, 8.27% err](https://github.com/akamaster/pytorch_resnet_cifar10/raw/master/pretrained_models/resnet20.th)
