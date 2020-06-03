@@ -113,7 +113,7 @@ def main():
         model.half()
         criterion.half()
 
-    optimizer = torch.optim.SGD(model.parameters(), args.lr,
+    optimizer = torch.optim.SGD([{"params":model.parameters(),"initial_lr":args.lr}], lr=args.lr,
                                 momentum=args.momentum,
                                 weight_decay=args.weight_decay)
 
