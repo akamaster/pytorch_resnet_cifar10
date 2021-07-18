@@ -38,9 +38,9 @@ parser.add_argument('--lr', '--learning-rate', default=0.1, type=float,
 parser.add_argument('--momentum', default=0.9, type=float, metavar='M',
                     help='momentum')
 parser.add_argument('--weight-decay', '--wd', default=1e-4, type=float,
-                    metavar='W', help='weight decay (default: 5e-4)')
+                    metavar='W', help='weight decay (default: 1e-4)')
 parser.add_argument('--print-freq', '-p', default=50, type=int,
-                    metavar='N', help='print frequency (default: 20)')
+                    metavar='N', help='print frequency (default: 50)')
 parser.add_argument('--resume', default='', type=str, metavar='PATH',
                     help='path to latest checkpoint (default: none)')
 parser.add_argument('-e', '--evaluate', dest='evaluate', action='store_true',
