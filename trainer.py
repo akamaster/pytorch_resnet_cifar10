@@ -12,6 +12,7 @@ import torch.utils.data
 import torchvision.transforms as transforms
 import torchvision.datasets as datasets
 import resnet
+import wandb
 
 model_names = sorted(name for name in resnet.__dict__
     if name.islower() and not name.startswith("__")
@@ -55,13 +56,22 @@ parser.add_argument('--save-dir', dest='save_dir',
 parser.add_argument('--save-every', dest='save_every',
                     help='Saves checkpoints at every specified number of epochs',
                     type=int, default=10)
+parser.add_argument("--use_wandb", default=True, type = bool,
+		    help = "Whether to use W&B for metric logging")
+parser.add_argument("--wandb_project", default="pytorch_resnet_cifar10", type=str,
+		    help="Name of the W&B Project")
+parser.add_argument("--wandb_entity", default=None, type=str,
+		    help="entity to use for W&B logging")
+
 best_prec1 = 0
 
 
 def main():
     global args, best_prec1
     args = parser.parse_args()
-
+    
+    if args.use_wandb:
+        wandb.init(project=args.wandb_project, entity=args.wandb_entity, config=args)
 
     # Check the save_dir exists or not
     if not os.path.exists(args.save_dir):
@@ -210,7 +220,8 @@ def train(train_loader, model, criterion, optimizer, epoch):
                   'Prec@1 {top1.val:.3f} ({top1.avg:.3f})'.format(
                       epoch, i, len(train_loader), batch_time=batch_time,
                       data_time=data_time, loss=losses, top1=top1))
-
+            if args.use_wandb:
+                wandb.log({"Loss": loss.item(), "Prec@1": prec1.item()})
 
 def validate(val_loader, model, criterion):
     """
@@ -256,6 +267,8 @@ def validate(val_loader, model, criterion):
                       'Prec@1 {top1.val:.3f} ({top1.avg:.3f})'.format(
                           i, len(val_loader), batch_time=batch_time, loss=losses,
                           top1=top1))
+                if args.use_wandb:
+                    wandb.log({"Loss": loss.item(), "Prec@1": prec1.item()})
 
     print(' * Prec@1 {top1.avg:.3f}'
           .format(top1=top1))
