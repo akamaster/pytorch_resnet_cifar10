@@ -85,8 +85,9 @@ def main():
 
     cudnn.benchmark = True
 
-    normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406],
-                                     std=[0.229, 0.224, 0.225])
+    normalize = transforms.Normalize(mean=[0.4914, 0.4822, 0.4465],
+                                     std=[0.247, 0.243, 0.261])
+
 
     train_loader = torch.utils.data.DataLoader(
         datasets.CIFAR10(root='./data', train=True, transform=transforms.Compose([
